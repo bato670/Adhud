@@ -1,18 +1,11 @@
-python3 << 'PYEOF'
-import base64
-files = {
-    'moh': ('/mnt/user-data/uploads/IMG_3641.png', 'image/png'),
-    'rawahel': ('/mnt/user-data/uploads/IMG_3633.jpeg', 'image/jpeg'),
-    'harakiya': ('/mnt/user-data/uploads/IMG_3630.png', 'image/png'),
-    'shraka': ('/mnt/user-data/uploads/IMG_3632.jpeg', 'image/jpeg'),
-    'nusuk': ('/mnt/user-data/uploads/IMG_3644.jpeg', 'image/jpeg'),
-    'haramain': ('/mnt/user-data/uploads/IMG_3642.jpeg', 'image/jpeg'),
+python3 << 'PYEOF'logos = {
+    "moh": "images/moh.png",
+    "rawahel": "images/rawahel.jpeg",
+    "harakiya": "images/harakiya.png",
+    "shraka": "images/shraka.jpeg",
+    "nusuk": "images/nusuk.jpeg",
+    "haramain": "images/haramain.jpeg",
 }
-logos = {}
-for key, (path, mime) in files.items():
-    with open(path, 'rb') as f:
-        data = base64.b64encode(f.read()).decode()
-    logos[key] = f'data:{mime};base64,{data}'
 html = '''<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
